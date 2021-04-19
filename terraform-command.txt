@@ -1,0 +1,3 @@
+./set-env.sh ../configurations/aws-edu-common-prd.tfvars configurations/aws-edu-infra-prd.tfvars
+terraform plan -var-file=../configurations/aws-edu-common-prd.tfvars -var-file=configurations/aws-edu-infra-prd.tfvars
+terraform destroy -var-file=../configurations/aws-edu-common-prd.tfvars -var-file=configurations/aws-edu-infra-prd.tfvars
