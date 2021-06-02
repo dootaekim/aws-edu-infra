@@ -1,5 +1,5 @@
 data "aws_eks_cluster" "cluster" {
-  name = module.eks.cluseter_id
+  name = module.eks.cluster_id
 }
 
 data "aws_eks_cluster_auth" "cluster" {
@@ -9,6 +9,8 @@ data "aws_eks_cluster_auth" "cluster" {
 data "aws_availability_zones" "available"{
 
 }
+
+
 
 resource "aws_security_group" "worker_group_mgmt_one" {
   name_prefix = "worker_group_mgmt_one"
@@ -89,6 +91,6 @@ module "eks" {
 
   worker_additional_security_group_ids = [aws_security_group.all_worker_mgmt.id]
   map_roles = var.map_roles
-  map_users = var.map_users
+  # map_users = var.map_users
   map_accounts = var.map_accounts
 }
